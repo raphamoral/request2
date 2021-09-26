@@ -6,7 +6,7 @@ def buscar_avatar(usuario):
     """
     Busca o avatar de um usuário no Github
     :param usuario: str com o nome de usuário no github
-test212313
+test212313ascadsa
     :return: str com o link do avatar
     """
 
