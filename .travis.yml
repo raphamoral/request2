@@ -8,7 +8,7 @@ install:
 script:
   - flake8 .
   - pytest request2
-
+  -pytest github_avatar_cather -- cov =github_avatar_cather
 after_success:
   - codecov
 
