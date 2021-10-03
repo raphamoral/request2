@@ -1,7 +1,7 @@
 README.md
 setup.py
 request2/__init__.py
-request2/githun_api.py
+request2/github_api.py
 request2.egg-info/PKG-INFO
 request2.egg-info/SOURCES.txt
 request2.egg-info/dependency_links.txt
