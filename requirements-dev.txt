@@ -8,6 +8,4 @@ six==1.16.0
 pluggy==1.0.0
 pytest==6.2.5
 attrs==19.2.0
-
-
 -r requirements.txt
