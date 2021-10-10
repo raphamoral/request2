@@ -21,4 +21,4 @@ def test_remetente(destinatario):
 def test_remetente_invalido(remetente):
     enviador = Enviador()
     with pytest.raises(EmailInvalido):
-        enviador.enviar(remetente, 'rmoral1991@gmail.com', 'Curse', 'Treinoo focado')
+        enviador.enviar(remetente, 'raphamoraleng@gmail.com', 'Curse', 'Treinoo focado')
