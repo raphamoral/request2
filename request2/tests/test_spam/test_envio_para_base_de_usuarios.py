@@ -2,21 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from request2.spam.enviador_de_email import Enviador
 from request2.spam.main import EnviadorDeSpam
 from request2.spam.modelos import Usuario
-
-
-class EnviadorMock(Enviador):
-
-    def __init__(self):
-        super().__init__()
-        self.qtd_email_enviados = 0
-        self.parametros_de_envio = None
-
-    def enviar(self, remetente, destinatario, assunto, corpo):
-        self.parametros_de_envio = (remetente, destinatario, assunto, corpo)
-        self.qtd_email_enviados += 1
 
 
 @pytest.mark.parametrize('usuarios',
@@ -38,7 +25,7 @@ def test_qde_de_spam(sessao, usuarios):
     enviador_de_spam.enviar_emails('raphamoraleng@gmail.com',
                                    'Aprendendo Junto com a Python Pro',
                                    'Confira se está acertando')
-    assert len(usuarios) == enviador.call_count
+    assert len(usuarios) == enviador.enviar.call_count
 
 
 def test_parametros_de_spam(sessao):
@@ -50,6 +37,6 @@ def test_parametros_de_spam(sessao):
                                    'Aprendendo Junto com a Python Pro',
                                    'Confira se está acertando')
     enviador.enviar.assert_called_once_with == ('rmoral1991@gmail.com',
-                                            'raphamoraleng@gmail.com',
-                                            'Aprendendo Junto com a Python Pro',
-                                            'Confira se está acertando')
+                                                'raphamoraleng@gmail.com',
+                                                'Aprendendo Junto com a Python Pro',
+                                                'Confira se está acertando')
